@@ -5,11 +5,11 @@ import java.util.*;
 public class DoubleLinkedList {
 
   //points to first node of list
-  DNode first;
+  public DNode first;
   //points to last node of list
-  DNode last; 
+  public DNode last; 
 
-  public void insertAfter(List<DNode> list, DNode node, DNode newNode) {
+  public void insertAfter(DNode node, DNode newNode) {
     newNode.previous = node;
     newNode.next = node.next;
     if (node.next == null) {
@@ -19,10 +19,9 @@ public class DoubleLinkedList {
       node.next.previous = newNode;
       node.next = newNode;
     }
-    list.add(newNode);
   }
 
-  public void insertBefore(List<DNode> list, DNode node, DNode newNode) {
+  public void insertBefore(DNode node, DNode newNode) {
     newNode.previous = node.previous;
     newNode.next = node;
     if (node.previous == null) {
@@ -32,25 +31,24 @@ public class DoubleLinkedList {
       node.previous.next = newNode;
       node.previous = newNode;
     }
-    list.add(newNode);
   }
 
-  public void insertBeginning(List<DNode> list, DNode newNode) {
+  public void insertBeginning(DNode newNode) {
     if (first == null) {
       first = newNode;
       last = newNode;
       newNode.previous = null;
       newNode.next = null;
     } else {
-      insertBefore(list, last, newNode);
+      insertBefore(last, newNode);
     }
   }
 
-  public void insertEnd(List<DNode> list, DNode newNode) {
+  public void insertEnd(DNode newNode) {
     if (last == null) {
-      insertBeginning(list, newNode);
+      insertBeginning(newNode);
     } else {
-      insertAfter(list, last, newNode);
+      insertAfter(last, newNode);
     }
   }
 
