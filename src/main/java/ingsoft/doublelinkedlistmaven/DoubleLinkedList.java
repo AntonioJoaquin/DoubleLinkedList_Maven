@@ -9,6 +9,14 @@ public class DoubleLinkedList {
   //points to last node of list
   public DNode last; 
 
+  public DNode getFirst(){
+	  return first;
+  }
+  
+  public DNode getLast(){
+	  return last;
+  }
+  
   public void insertAfter(DNode node, DNode newNode) {
     newNode.previous = node;
     newNode.next = node.next;

@@ -20,5 +20,13 @@ public class DNode {
     this.previous = previous;
     this.next = next;
   }
+  
+  public DNode getPrevious(){
+	  return previous;
+  }
+  
+  public DNode getNext(){
+	  return next;
+  }
 
 }
